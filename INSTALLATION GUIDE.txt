@@ -1,0 +1,44 @@
+
+DISCLIAMER:
+This script is for educational purposes only. Unauthorized use or
+modification is prohibited. The company is not liable
+for any damages or legal issues from misuse. Users must comply with all laws.
+
+
+=============================================================
+*************************************************************
+============================================================
+
+SECURITY DISCLIAMER:
+Change default admin passwords immediately. We are not responsible for breaches due to
+unaltered settings or infrequent checks.
+
+
+
+INSTALLATION GUIDE
+
+PHP VERSION 7.4
+
+
+*** TO SET UP DATABASE LOOK FOR CONFIG FOLDER -> THEN EDIT db.php  AND SET IT UP ACCORDING TO YOUR DETAILS
+*** THEN GO TO SQL FOLDER TO LOCATE YOUR database.sql FILE FOR DATABASE
+
+*** TO SET UP SMTP LOOK FOR CONFIG FOLDER -> THEN EDIT function.php  AND SET IT UP ACCORDING TO YOUR DETAILS
+
+
+
+
+
+
+***ADMIN URL: siteurl/admin/login.php
+***Email:  admin@mail.com
+***PASSWORD:  123456
+
+
+================================================================
+****************************************************************
+================================================================
+DISCLIAMER:
+This script is for educational purposes only. Unauthorized use or
+modification is prohibited. The company is not liable
+for any damages or legal issues from misuse. Users must comply with all laws.

@@ -1,0 +1,148 @@
+[17-Jan-2026 07:34:43 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/header.php on line 4
+[17-Jan-2026 08:25:47 UTC] PHP Warning:  include(sidebar.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/header.php on line 75
+[17-Jan-2026 08:25:47 UTC] PHP Warning:  include(): Failed opening 'sidebar.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/header.php on line 75
+[17-Jan-2026 17:21:00 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:21:00 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:22:52 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:22:52 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:24:17 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:24:17 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:28:12 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:28:12 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:32:53 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:32:53 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:33:23 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:33:23 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:33:26 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:33:26 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:38:35 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:38:35 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:38:35 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:38:35 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:38:35 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 55
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  Undefined array key "network" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 55
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 59
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:39:07 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:39:19 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:39:19 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:39:19 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:39:19 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:39:19 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:43:08 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:43:08 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:43:08 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:43:08 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:43:08 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:43:16 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 71
+[17-Jan-2026 17:43:16 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 183
+[17-Jan-2026 17:43:16 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 224
+[17-Jan-2026 17:43:17 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 71
+[17-Jan-2026 17:43:17 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 183
+[17-Jan-2026 17:43:17 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 224
+[17-Jan-2026 17:43:37 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 53
+[17-Jan-2026 17:43:37 UTC] PHP Warning:  Undefined array key "network" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 53
+[17-Jan-2026 17:43:37 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 58
+[17-Jan-2026 17:43:37 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 71
+[17-Jan-2026 17:43:37 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 183
+[17-Jan-2026 17:43:37 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 224
+[17-Jan-2026 17:44:13 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:13 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:13 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:44:13 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:44:13 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:44:19 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:19 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:19 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:44:19 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:44:19 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 54
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  Undefined array key "network" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 54
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 59
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:44:38 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:44:41 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:41 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:44:41 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 72
+[17-Jan-2026 17:44:41 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 184
+[17-Jan-2026 17:44:41 UTC] PHP Warning:  Undefined array key "symbol" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 225
+[17-Jan-2026 17:48:10 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:48:10 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:48:30 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:48:30 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:49:25 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:49:25 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:51:53 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:51:53 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 17:51:53 UTC] PHP Warning:  Undefined array key "db" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 21
+[17-Jan-2026 17:51:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users WHERE id='7'' at line 1 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php:22
+Stack trace:
+#0 /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php(22): mysqli_query(Object(mysqli), 'SELECT  FROM us...')
+#1 {main}
+  thrown in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 22
+[17-Jan-2026 17:52:22 UTC] PHP Warning:  Undefined array key "db" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 21
+[17-Jan-2026 17:52:22 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users WHERE id='7'' at line 1 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php:22
+Stack trace:
+#0 /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php(22): mysqli_query(Object(mysqli), 'SELECT  FROM us...')
+#1 {main}
+  thrown in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 22
+[17-Jan-2026 17:52:52 UTC] PHP Warning:  Undefined array key "db" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 21
+[17-Jan-2026 17:52:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users WHERE id='7'' at line 1 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php:22
+Stack trace:
+#0 /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php(22): mysqli_query(Object(mysqli), 'SELECT  FROM us...')
+#1 {main}
+  thrown in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 22
+[17-Jan-2026 17:53:29 UTC] PHP Warning:  Undefined array key "db" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 21
+[17-Jan-2026 17:53:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users WHERE id='7'' at line 1 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php:22
+Stack trace:
+#0 /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php(22): mysqli_query(Object(mysqli), 'SELECT  FROM us...')
+#1 {main}
+  thrown in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 22
+[17-Jan-2026 17:54:40 UTC] PHP Warning:  Undefined array key "db" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 21
+[17-Jan-2026 17:54:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users WHERE id='7'' at line 1 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php:22
+Stack trace:
+#0 /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php(22): mysqli_query(Object(mysqli), 'SELECT  FROM us...')
+#1 {main}
+  thrown in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 22
+[17-Jan-2026 17:56:40 UTC] PHP Warning:  Undefined array key "db" in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 24
+[17-Jan-2026 17:56:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM users WHERE id='7'' at line 1 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php:25
+Stack trace:
+#0 /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php(25): mysqli_query(Object(mysqli), 'SELECT  FROM us...')
+#1 {main}
+  thrown in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 25
+[17-Jan-2026 18:11:10 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 18:11:10 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 18:11:42 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 18:11:42 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 18:11:45 UTC] PHP Warning:  include(../config/coins.php): Failed to open stream: No such file or directory in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[17-Jan-2026 18:11:45 UTC] PHP Warning:  include(): Failed opening '../config/coins.php' for inclusion (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 3
+[19-Jan-2026 12:51:32 UTC] PHP Warning:  Undefined variable $phone in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 133
+[19-Jan-2026 12:51:32 UTC] PHP Warning:  Undefined variable $dob in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 137
+[19-Jan-2026 12:51:32 UTC] PHP Warning:  Undefined variable $country in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 141
+[19-Jan-2026 12:51:32 UTC] PHP Warning:  Undefined variable $address in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 145
+[19-Jan-2026 12:56:23 UTC] PHP Warning:  Undefined variable $phone in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 130
+[19-Jan-2026 12:56:23 UTC] PHP Warning:  Undefined variable $dob in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 134
+[19-Jan-2026 12:56:23 UTC] PHP Warning:  Undefined variable $country in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 138
+[19-Jan-2026 12:56:23 UTC] PHP Warning:  Undefined variable $address in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 142
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $USDT_ERC20 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 12
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $ETH in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 18
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $BTC in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 24
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $BNB in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 30
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $TRX in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 36
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $USDT_TRC20 in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 42
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $LTC in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 48
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $DOGE in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 54
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $SOL in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 60
+[19-Jan-2026 13:19:30 UTC] PHP Warning:  Undefined variable $MATIC in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 66
+[19-Jan-2026 13:24:34 UTC] PHP Warning:  Undefined variable $BTC in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/receive.php on line 24
+[19-Jan-2026 13:32:32 UTC] PHP Warning:  Undefined variable $phone in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 130
+[19-Jan-2026 13:32:32 UTC] PHP Warning:  Undefined variable $dob in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 134
+[19-Jan-2026 13:32:32 UTC] PHP Warning:  Undefined variable $country in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 138
+[19-Jan-2026 13:32:32 UTC] PHP Warning:  Undefined variable $address in /home/dssmshu1/test2.dssmshublogs.com.ng/fchain/app/profile.php on line 142
