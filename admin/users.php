@@ -308,6 +308,8 @@ $result = mysqli_query($link, $query);
     </div>
 </div>
 
+<?php include 'footer.php'; ?>
+
 <script>
     function openEditModal(json) {
         const user = JSON.parse(json);
@@ -353,4 +355,3 @@ $result = mysqli_query($link, $query);
     <?php echo $alert; ?>
 </script>
 
-<?php include 'footer.php'; ?>

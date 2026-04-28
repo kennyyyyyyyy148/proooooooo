@@ -208,6 +208,5 @@ $recent_q = mysqli_query($link, "SELECT t.*, u.username AS fullname, u.email FRO
             </div>
         </div>
     </div>
-
-</div>
 <?php include 'footer.php'; ?>
+</div>
