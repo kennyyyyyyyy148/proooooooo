@@ -1,7 +1,7 @@
 <?php
 // ping.php - lightweight keep-alive endpoint
 
-require __DIR__ . '/config/db.php';
+require __DIR__ . '/db.php';
 
 // very lightweight query to wake DB
 mysqli_query($conn, "SELECT 1");
