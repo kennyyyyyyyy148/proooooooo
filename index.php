@@ -97,7 +97,7 @@ include 'config/config.php';
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-brand-primary flex items-center justify-center shadow-neon">
-                        <span class="font-bold text-white text-xl">F</span>
+                        <span class="font-bold text-white text-xl">MTA</span>
                     </div>
                     <span class="font-sans font-bold text-xl tracking-tight text-white"><?php echo $sitename; ?></span>
                 </div>
