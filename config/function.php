@@ -11,40 +11,32 @@ if (file_exists(__DIR__ . '/../.env')) {
     $dotenv->load();
 }
 
-use Resend\Resend;
-
 /**
- * EMAIL FUNCTION WITH FULL DEBUG SUPPORT
+ * EMAIL FUNCTION (SAFE + DEBUG READY)
  */
 function sendMail($email, $subject, $message) {
 
-    $debug = [];
+    $key = getenv('RESEND_API_KEY');
 
-    // Check all possible environment sources
-    $debug['env'] = $_ENV['RESEND_API_KEY'] ?? null;
-    $debug['server'] = $_SERVER['RESEND_API_KEY'] ?? null;
-    $debug['getenv'] = getenv('RESEND_API_KEY');
-
-    // Final key resolution
-    $resendApiKey = $debug['env'] 
-        ?? $debug['server'] 
-        ?? $debug['getenv'];
-
-    // If missing API key, return debug info
-    if (!$resendApiKey) {
+    if (!$key) {
         return [
-            'error' => 'Missing RESEND_API_KEY in environment',
-            'debug' => $debug
+            'error' => 'Missing API key',
+            'debug' => [
+                'env' => $_ENV['RESEND_API_KEY'] ?? null,
+                'server' => $_SERVER['RESEND_API_KEY'] ?? null,
+                'getenv' => getenv('RESEND_API_KEY')
+            ]
         ];
     }
 
-    $resend = Resend::client($resendApiKey);
-
     try {
+
+        // IMPORTANT: fully qualified class (prevents "class already in use")
+        $resend = \Resend\Resend::client($key);
+
         $resend->emails->send([
             'from' => 'Fichain <mail@mytradingaxis.live>',
             'to' => [$email],
-            'reply_to' => 'mail@mytradingaxis.live',
             'subject' => $subject,
             'html' => $message,
         ]);
@@ -54,7 +46,11 @@ function sendMail($email, $subject, $message) {
     } catch (\Exception $e) {
         return [
             'error' => $e->getMessage(),
-            'debug' => $debug
+            'debug' => [
+                'env' => $_ENV['RESEND_API_KEY'] ?? null,
+                'server' => $_SERVER['RESEND_API_KEY'] ?? null,
+                'getenv' => getenv('RESEND_API_KEY')
+            ]
         ];
     }
 }
