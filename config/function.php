@@ -1,7 +1,5 @@
 <?php
 
-use Resend\Resend;
-
 /**
  * EMAIL FUNCTION (SAFE + DEBUG READY)
  */
@@ -22,8 +20,8 @@ function sendMail($email, $subject, $message) {
 
     try {
 
-        // IMPORTANT: prevent namespace collision
-        $resend = Resend::client($key);
+        // 💡 FIX: Direct absolute namespace call stops the "class in use" error
+        $resend = \Resend::client($key);
 
         $resend->emails->send([
             'from' => 'Fichain <mail@mytradingaxis.live>',
