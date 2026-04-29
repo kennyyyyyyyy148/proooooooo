@@ -7,7 +7,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // Load .env (make sure this runs once in your project bootstrap)
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
+$dotenv->safeLoad();
 
 use Resend\Resend;
 
