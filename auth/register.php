@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-// Use require_once to prevent "Cannot declare class Resend" fatal errors
-require_once '../config/db.php';        
-require_once '../config/function.php';
-require_once '../config/config.php';   
+require_once '../config/bootstrap.php';
+require_once '../config/function.php'; 
 
 $alert = "";
 

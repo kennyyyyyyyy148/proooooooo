@@ -1,8 +1,8 @@
 <?php
 session_start();
-include '../config/db.php';
-include '../config/config.php';
-include '../config/function.php';
+
+require_once '../config/bootstrap.php';
+require_once '../config/function.php';
 
 $alert = "";
 

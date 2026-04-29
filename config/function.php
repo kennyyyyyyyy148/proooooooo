@@ -1,15 +1,6 @@
-<?php 
-require_once 'config.php';
-require_once 'db.php';
+<?php
 
-// Composer autoloader
-require_once __DIR__ . '/../vendor/autoload.php';
-
-// Load .env (local only)
-if (file_exists(__DIR__ . '/../.env')) {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-    $dotenv->load();
-}
+use Resend\Resend;
 
 /**
  * EMAIL FUNCTION (SAFE + DEBUG READY)
@@ -31,8 +22,8 @@ function sendMail($email, $subject, $message) {
 
     try {
 
-        // IMPORTANT: fully qualified class (prevents "class already in use")
-        $resend = \Resend\Resend::client($key);
+        // IMPORTANT: prevent namespace collision
+        $resend = Resend::client($key);
 
         $resend->emails->send([
             'from' => 'Fichain <mail@mytradingaxis.live>',
@@ -75,7 +66,7 @@ function redirect($url) {
 }
 
 /**
- * GENERATE WALLET PHRASE
+ * WALLET PHRASE
  */
 function generateWalletPhrase() {
     $wordList = [
@@ -90,4 +81,3 @@ function generateWalletPhrase() {
     shuffle($wordList);
     return implode(" ", array_slice($wordList, 0, 12));
 }
-?>

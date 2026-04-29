@@ -2,9 +2,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include '../config/db.php';        
-include '../config/function.php';
-include '../config/config.php'; 
+session_start();
+
+require_once '../config/bootstrap.php';
+require_once '../config/function.php';
 
 $email = "";
 $err = "";

@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-include '../config/db.php';        
-include '../config/function.php';
-include '../config/config.php';    
+require_once '../config/bootstrap.php';
+require_once '../config/function.php';   
 
 if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "") {
     

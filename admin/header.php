@@ -1,8 +1,8 @@
 <?php
 session_start();
-include '../config/db.php';
-include '../config/function.php';
-include '../config/config.php';
+
+require_once '../config/bootstrap.php';
+require_once '../config/function.php';
 
 // Security Check
 if(!isset($_SESSION['admin_id'])){
