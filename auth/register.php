@@ -95,7 +95,15 @@ $body = '
     </div>
 </div>';
 
-sendMail($email, $subject, $body);
+$mail_status = sendMail($email, $subject, $body);
+
+if ($mail_status !== true) {
+    // Stop everything and print the exact error Resend is giving us
+    die("<div style='color:red; padding:20px; font-family:sans-serif;'>
+            <h3>Email Failed to Send:</h3>
+            <p>" . $mail_status . "</p>
+         </div>");
+}
 
             // 7. Redirect Logic
             $check_email = isset($enable_email_verification) ? $enable_email_verification : 1;
