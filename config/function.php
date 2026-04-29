@@ -3,7 +3,7 @@ include 'config.php';
 include 'db.php';
 
 // Include the Composer autoloader
-require 'vendor/autoload.php'; 
+require '../vendor/autoload.php'; 
 
 function sendMail($email, $subject, $message) {
     // 1. Paste your actual Resend API Key here
