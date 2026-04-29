@@ -14,20 +14,22 @@ require_once "mailer/Exception.php";
 function sendMail($email, $subject, $message) {
     $mail = new PHPMailer();
     
-    // SMTP Settings
+    // --- MAILTRAP SMTP SETTINGS ---
     $mail->isSMTP();
-    $mail->Host = "fichain.com.ng"; // Replace with your mail server
+    $mail->Host = 'sandbox.smtp.mailtrap.io'; // Mailtrap Host
     $mail->SMTPAuth = true;
-    $mail->Username = "mail@fichain.com.ng"; // Your cPanel email
-    $mail->Password = '@@52352535##'; // Your cPanel email password
-    $mail->Port = 465; // Typically 465 for SSL
-    $mail->SMTPSecure = "ssl"; // Use 'tls' for 587
+    $mail->Port = 2525; // Mailtrap Port
+    
+    // TODO: Replace these with the ones from your Mailtrap "My Sandbox" page
+    $mail->Username = 'cc2ef6fe8efbed'; 
+    $mail->Password = 'af9562faec2164'; 
+    // ------------------------------
 
     // Email Settings
     $mail->isHTML(true);
-    $mail->setFrom('mail@fichain.com.ng', 'Fichain'); // Sender details
+    $mail->setFrom('mail@mytradingaxis.live', 'MyTradingAxis Testing'); // Sender details
     $mail->addAddress($email); // Recipient email
-    $mail->AddReplyTo("mail@fichain.com.ng", "Fichain"); // Reply-to email
+    $mail->AddReplyTo("mail@mytradingaxis.live", "MyTradingAxis"); // Reply-to email
     $mail->Subject = $subject;
     $mail->MsgHTML($message);
 
@@ -65,6 +67,5 @@ function generateWalletPhrase() {
     shuffle($wordList);
     return implode(" ", array_slice($wordList, 0, 12));
 }
-
 
 ?>
