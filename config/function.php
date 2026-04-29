@@ -6,8 +6,11 @@ require_once 'db.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Load .env (make sure this runs once in your project bootstrap)
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->safeLoad();
+// Only load .env locally
+if (file_exists(__DIR__ . '/../.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    $dotenv->load();
+}
 
 use Resend\Resend;
 
