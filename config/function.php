@@ -25,9 +25,9 @@ function sendMail($email, $subject, $message) {
 
     try {
         $resend->emails->send([
-            'from' => 'Fichain <mail@fichain.com.ng>',
+            'from' => 'Fichain <mail@mytradingaxis.live>',
             'to' => [$email],
-            'reply_to' => 'mail@fichain.com.ng',
+            'reply_to' => 'mail@mytradingaxis.live',
             'subject' => $subject,
             'html' => $message,
         ]);
