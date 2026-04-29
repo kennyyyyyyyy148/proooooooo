@@ -1,0 +1,10 @@
+# Environment file (VERY IMPORTANT - contains secrets)
+.env
+
+# Composer dependencies
+/vendor/
+
+# OS / IDE junk (optional but recommended)
+.DS_Store
+Thumbs.db
+.vscode/
