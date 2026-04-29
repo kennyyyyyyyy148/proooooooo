@@ -2,42 +2,30 @@
 include 'config.php';
 include 'db.php';
 
-include 'mailer/vendor/autoload.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require_once "mailer/PHPMailer.php";
-require_once "mailer/SMTP.php";
-require_once "mailer/Exception.php";
+// Include the Composer autoloader
+require 'vendor/autoload.php'; 
 
 function sendMail($email, $subject, $message) {
-    $mail = new PHPMailer();
-    
-    // --- MAILTRAP SMTP SETTINGS ---
-    $mail->isSMTP();
-    $mail->Host = 'sandbox.smtp.mailtrap.io'; // Mailtrap Host
-    $mail->SMTPAuth = true;
-    $mail->Port = 2525; // Mailtrap Port
-    
-    // TODO: Replace these with the ones from your Mailtrap "My Sandbox" page
-    $mail->Username = 'cc2ef6fe8efbed'; 
-    $mail->Password = 'af9562faec2164'; 
-    // ------------------------------
+    // 1. Paste your actual Resend API Key here
+    $resendApiKey = 're_GkMAQB3u_7FwRQXQSaarXQ4zzPDy2LtPo'; 
 
-    // Email Settings
-    $mail->isHTML(true);
-    $mail->setFrom('mail@mytradingaxis.live', 'MyTradingAxis Testing'); // Sender details
-    $mail->addAddress($email); // Recipient email
-    $mail->AddReplyTo("mail@mytradingaxis.live", "MyTradingAxis"); // Reply-to email
-    $mail->Subject = $subject;
-    $mail->MsgHTML($message);
+    $resend = Resend::client($resendApiKey);
 
-    // Error handling
-    if (!$mail->Send()) {
-        return 'Mailer Error: ' . $mail->ErrorInfo;
-    } else {
+    try {
+        $resend->emails->send([
+            // 2. This uses your newly verified domain!
+            'from' => 'Fichain <mail@fichain.com.ng>', 
+            'to' => [$email], // The user registering
+            'reply_to' => 'mail@fichain.com.ng',
+            'subject' => $subject,
+            'html' => $message,
+        ]);
+        
         return true;
+        
+    } catch (\Exception $e) {
+        // If something goes wrong, this will print the exact error
+        return 'Mailer Error: ' . $e->getMessage();
     }
 }
 
