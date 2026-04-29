@@ -426,9 +426,11 @@ include 'config/config.php';
                         </div>
                     </div>
                     
-                    <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
-                        Get Your Card
-                    </button>
+                    <a href="auth/register.php" class="inline-block">
+                        <button class="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-lg font-bold transition-all shadow-neon">
+                            Get Your Card
+                        </button>
+                    </a>
                 </div>
 
             </div>
@@ -534,8 +536,8 @@ include 'config/config.php';
                 <div>
                     <h4 class="font-bold text-white mb-4">Legal</h4>
                     <ul class="space-y-2 text-sm text-dark-muted">
-                        <li><a href="#" class="hover:text-brand-primary">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-brand-primary">Terms of Service</a></li>
+                        <li><a href="main/privacy.php" class="hover:text-brand-primary">Privacy Policy</a></li>
+                        <li><a href="main/terms.php" class="hover:text-brand-primary">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
