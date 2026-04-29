@@ -1,9 +1,9 @@
 <?php 
-include 'config.php';
-include 'db.php';
+require_once 'config.php';
+require_once 'db.php';
 
 // Composer autoloader
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Load .env (make sure this runs once in your project bootstrap)
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');

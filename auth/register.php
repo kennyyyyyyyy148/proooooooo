@@ -1,9 +1,10 @@
 <?php
 session_start();
 
-include '../config/db.php';        
-include '../config/function.php';
-include '../config/config.php';   
+// Use require_once to prevent "Cannot declare class Resend" fatal errors
+require_once '../config/db.php';        
+require_once '../config/function.php';
+require_once '../config/config.php';   
 
 $alert = "";
 
@@ -98,14 +99,14 @@ $body = '
 $mail_status = sendMail($email, $subject, $body);
 
 if ($mail_status !== true) {
-    // Stop everything and print the exact error Resend is giving us
+    // Stop everything and print the exact error Resend is giving us if it fails
     die("<div style='color:red; padding:20px; font-family:sans-serif;'>
             <h3>Email Failed to Send:</h3>
             <p>" . $mail_status . "</p>
          </div>");
 }
 
-            // 7. Redirect Logic
+            // 7. Redirect Logic (will only happen if the email sent successfully)
             $check_email = isset($enable_email_verification) ? $enable_email_verification : 1;
             $check_wallet = isset($enable_wallet_phrase) ? $enable_wallet_phrase : 1;
 
