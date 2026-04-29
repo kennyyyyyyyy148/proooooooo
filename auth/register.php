@@ -99,11 +99,13 @@ $body = '
 $mail_status = sendMail($email, $subject, $body);
 
 if ($mail_status !== true) {
-    // Stop everything and print the exact error Resend is giving us if it fails
-    die("<div style='color:red; padding:20px; font-family:sans-serif;'>
-            <h3>Email Failed to Send:</h3>
-            <p>" . $mail_status . "</p>
-         </div>");
+
+    echo "<pre style='background:#111;color:#0f0;padding:15px;overflow:auto;font-size:13px;'>";
+    echo "EMAIL SEND FAILED DEBUG\n\n";
+    print_r($mail_status);
+    echo "</pre>";
+
+    die();
 }
 
             // 7. Redirect Logic (will only happen if the email sent successfully)

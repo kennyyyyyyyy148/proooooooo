@@ -5,8 +5,7 @@ require_once 'db.php';
 // Composer autoloader
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Load .env (make sure this runs once in your project bootstrap)
-// Only load .env locally
+// Load .env (local only)
 if (file_exists(__DIR__ . '/../.env')) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
     $dotenv->load();
@@ -14,14 +13,29 @@ if (file_exists(__DIR__ . '/../.env')) {
 
 use Resend\Resend;
 
+/**
+ * EMAIL FUNCTION WITH FULL DEBUG SUPPORT
+ */
 function sendMail($email, $subject, $message) {
 
-    $resendApiKey = $_ENV['RESEND_API_KEY'] 
-    ?? $_SERVER['RESEND_API_KEY'] 
-    ?? getenv('RESEND_API_KEY');
+    $debug = [];
 
+    // Check all possible environment sources
+    $debug['env'] = $_ENV['RESEND_API_KEY'] ?? null;
+    $debug['server'] = $_SERVER['RESEND_API_KEY'] ?? null;
+    $debug['getenv'] = getenv('RESEND_API_KEY');
+
+    // Final key resolution
+    $resendApiKey = $debug['env'] 
+        ?? $debug['server'] 
+        ?? $debug['getenv'];
+
+    // If missing API key, return debug info
     if (!$resendApiKey) {
-        return 'Mailer Error: Missing RESEND_API_KEY in environment';
+        return [
+            'error' => 'Missing RESEND_API_KEY in environment',
+            'debug' => $debug
+        ];
     }
 
     $resend = Resend::client($resendApiKey);
@@ -38,10 +52,16 @@ function sendMail($email, $subject, $message) {
         return true;
 
     } catch (\Exception $e) {
-        return 'Mailer Error: ' . $e->getMessage();
+        return [
+            'error' => $e->getMessage(),
+            'debug' => $debug
+        ];
     }
 }
 
+/**
+ * CLEAN INPUT
+ */
 function clean($data) {
     global $link;
     $data = trim($data);
@@ -50,12 +70,17 @@ function clean($data) {
     return mysqli_real_escape_string($link, $data);
 }
 
+/**
+ * REDIRECT
+ */
 function redirect($url) {
     echo "<script>window.location.href='$url';</script>";
     exit;
 }
 
-// Generate 12-word phrase
+/**
+ * GENERATE WALLET PHRASE
+ */
 function generateWalletPhrase() {
     $wordList = [
         "quick","giraffe","ethereal","verdant","mellifluous","elephant","effervescent","enigma",
