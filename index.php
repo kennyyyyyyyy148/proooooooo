@@ -596,43 +596,48 @@ include 'config/config.php';
 
        
         async function fetchData() {
-            try {
-                const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&sparkline=false');
-                const data = await res.json();
-                
-                
-                const ticker = document.getElementById('crypto-ticker');
-                let tickerHtml = '';
-                data.forEach(coin => {
-                    const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
-                    tickerHtml += `<span class="mx-4"><span class="font-bold text-white">${coin.symbol.toUpperCase()}</span> $${coin.current_price} <span class="${color}">${coin.price_change_percentage_24h.toFixed(2)}%</span></span>`;
-                });
-                
-                ticker.innerHTML = tickerHtml + tickerHtml;
+    try {
+        const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&sparkline=false');
+        const data = await res.json();
+        
+        // --- 1. Update Ticker ---
+        const ticker = document.getElementById('crypto-ticker');
+        let tickerHtml = '';
+        data.forEach(coin => {
+            const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
+            tickerHtml += `<span class="mx-4"><span class="font-bold text-white">${coin.symbol.toUpperCase()}</span> $${coin.current_price} <span class="${color}">${coin.price_change_percentage_24h.toFixed(2)}%</span></span>`;
+        });
+        
+        ticker.innerHTML = tickerHtml + tickerHtml;
 
-               
-                const table = document.getElementById('market-body');
-                let tableHtml = '';
-                data.forEach(coin => {
-                    const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
-                    tableHtml += `
-                        <tr class="hover:bg-dark-panel transition-colors">
-                            <td class="px-6 py-4 flex items-center gap-3">
-                                <img src="${coin.image}" class="w-6 h-6 rounded-full">
-                                <span class="text-white font-bold">${coin.name}</span>
-                            </td>
-                            <td class="px-6 py-4 text-white font-mono">$${coin.current_price}</td>
-                            <td class="px-6 py-4 ${color} font-medium">${coin.price_change_percentage_24h.toFixed(2)}%</td>
-                            <td class="px-6 py-4 text-right"><button class="text-brand-primary hover:text-white border border-brand-primary hover:bg-brand-primary px-3 py-1 rounded text-xs transition-colors">Trade</button></td>
-                        </tr>
-                    `;
-                });
-                table.innerHTML = tableHtml;
+        // --- 2. Update Table ---
+        const table = document.getElementById('market-body');
+        let tableHtml = '';
+        data.forEach(coin => {
+            const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
+            tableHtml += `
+                <tr class="hover:bg-dark-panel transition-colors">
+                    <td class="px-6 py-4 flex items-center gap-3">
+                        <img src="${coin.image}" class="w-6 h-6 rounded-full">
+                        <span class="text-white font-bold">${coin.name}</span>
+                    </td>
+                    <td class="px-6 py-4 text-white font-mono">$${coin.current_price}</td>
+                    <td class="px-6 py-4 ${color} font-medium">${coin.price_change_percentage_24h.toFixed(2)}%</td>
+                    <td class="px-6 py-4 text-right">
+                        <button onclick="window.location.href='register.php';" class="text-brand-primary hover:text-white border border-brand-primary hover:bg-brand-primary px-3 py-1 rounded text-xs transition-colors">
+                            Trade
+                        </button>
+                    </td>
+                </tr>
+            `;
+        });
+        table.innerHTML = tableHtml;
 
-            } catch (e) {
-                console.log(e);
-            }
-        }
+    } catch (e) {
+        console.log("Error fetching crypto data:", e);
+    }
+}
+
         fetchData();
     </script>
 </body>
