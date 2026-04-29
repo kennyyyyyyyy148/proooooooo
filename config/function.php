@@ -24,7 +24,7 @@ function sendMail($email, $subject, $message) {
         $resend = \Resend::client($key);
 
         $resend->emails->send([
-            'from' => 'Fichain <mail@mytradingaxis.live>',
+            'from' => 'mytradingaxis <mail@mytradingaxis.live>',
             'to' => [$email],
             'subject' => $subject,
             'html' => $message,

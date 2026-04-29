@@ -191,80 +191,92 @@ include 'config/config.php';
         </div>
     </section>
 
-    <section id="wallet" class="py-16 relative bg-dark-panel/30 border-t border-dark-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-8">
-                
-                <div class="lg:col-span-2">
-                    <div class="glass-card rounded-2xl overflow-hidden shadow-card h-full">
-                        <div class="p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
-                            <div>
-                                <h3 class="text-xl font-bold text-white">My Wallet</h3>
-                                <p class="text-xs text-dark-muted">Multi-Chain Support (ERC20, BEP20, TRC20)</p>
-                            </div>
-                            <div class="bg-dark-bg px-3 py-1 rounded border border-dark-border flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                                <span class="text-xs font-mono">Connected</span>
+<section id="wallet" class="py-16 relative bg-dark-panel/30 border-t border-dark-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-card h-full">
+                    <div class="p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">My Wallet</h3>
+                            <p class="text-xs text-dark-muted">Multi-Chain Support (ERC20, BEP20, TRC20)</p>
+                        </div>
+                        <div class="bg-dark-bg px-3 py-1 rounded border border-dark-border flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <span class="text-xs font-mono">Connected</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 grid md:grid-cols-2 gap-8">
+                        <div class="flex flex-col justify-center">
+                            <p class="text-dark-muted text-sm mb-1">Total Balance</p>
+                            <h2 class="text-4xl font-display font-bold text-white mb-6">$42,894.52</h2>
+                            
+                            <div class="grid grid-cols-3 gap-3">
+                                <!-- Send Button -->
+                                <button onclick="window.location.href='auth/register.php';" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
+                                    <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </div>
+                                    <span class="text-xs font-medium">Send</span>
+                                </button>
+                                <!-- Receive Button -->
+                                <button onclick="window.location.href='auth/register.php';" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
+                                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                    </div>
+                                    <span class="text-xs font-medium">Receive</span>
+                                </button>
+                                <!-- Swap Button -->
+                                <button onclick="window.location.href='auth/register.php';" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
+                                    <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white">
+                                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                    </div>
+                                    <span class="text-xs font-medium">Swap</span>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="p-6 grid md:grid-cols-2 gap-8">
-                            <div class="flex flex-col justify-center">
-                                <p class="text-dark-muted text-sm mb-1">Total Balance</p>
-                                <h2 class="text-4xl font-display font-bold text-white mb-6">$42,894.52</h2>
-                                
-                                <div class="grid grid-cols-3 gap-3">
-                                    <button onclick="switchTab('send')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
-                                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white">
-                                            <i class="fa-solid fa-paper-plane"></i>
-                                        </div>
-                                        <span class="text-xs font-medium">Send</span>
-                                    </button>
-                                    <button onclick="switchTab('receive')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
-                                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white">
-                                            <i class="fa-solid fa-qrcode"></i>
-                                        </div>
-                                        <span class="text-xs font-medium">Receive</span>
-                                    </button>
-                                    <button onclick="switchTab('swap')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
-                                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white">
-                                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                                        </div>
-                                        <span class="text-xs font-medium">Swap</span>
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="bg-dark-bg rounded-xl border border-dark-border p-5 min-h-[300px] relative">
 
-                            <div class="bg-dark-bg rounded-xl border border-dark-border p-5 min-h-[300px] relative">
-    
-    <!-- SEND TAB -->
-    <div id="tab-send" class="space-y-4">
-        <div class="flex justify-between items-center mb-2">
-            <h4 class="font-bold text-white">Send Crypto</h4>
-            <span class="text-xs text-brand-primary cursor-pointer">Max Amount</span>
-        </div>
-        <div>
-            <label class="text-xs text-dark-muted block mb-1">Asset</label>
-            <select class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
-                <option>Bitcoin (BTC)</option>
-                <option>Ethereum (ETH)</option>
-                <option>USDT (TRC20)</option>
-            </select>
-        </div>
-        <div>
-            <label class="text-xs text-dark-muted block mb-1">Recipient Address</label>
-            <div class="relative">
-                <input type="text" placeholder="Paste address..." class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none pl-9">
-                <i class="fa-solid fa-wallet absolute left-3 top-3 text-dark-muted text-xs"></i>
+                            <!-- SEND TAB -->
+                            <div id="tab-send" class="space-y-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-bold text-white">Send Crypto</h4>
+                                    <!-- Max Amount Trigger -->
+                                    <span onclick="window.location.href='auth/register.php';" class="text-xs text-brand-primary cursor-pointer">Max Amount</span>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-dark-muted block mb-1">Asset</label>
+                                    <select class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
+                                        <option>Bitcoin (BTC)</option>
+                                        <option>Ethereum (ETH)</option>
+                                        <option>USDT (TRC20)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-dark-muted block mb-1">Recipient Address</label>
+                                    <div class="relative">
+                                        <input type="text" placeholder="Paste address..." class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none pl-9">
+                                        <i class="fa-solid fa-wallet absolute left-3 top-3 text-dark-muted text-xs"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-dark-muted block mb-1">Amount</label>
+                                    <input type="number" placeholder="0.00" class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
+                                </div>
+                                <!-- Confirm Send Button -->
+                                <button onclick="window.location.href='auth/register.php';" class="w-full bg-brand-primary hover:bg-brand-accent text-white font-bold py-2.5 rounded-lg mt-2 transition-colors">Confirm Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
-            <label class="text-xs text-dark-muted block mb-1">Amount</label>
-            <input type="number" placeholder="0.00" class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
-        </div>
-        <!-- FIXED SEND BUTTON -->
-        <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary hover:bg-brand-accent text-white font-bold py-2.5 rounded-lg mt-2 transition-colors">Confirm Send</button>
     </div>
+</section>
+
 
     <!-- RECEIVE TAB -->
     <div id="tab-receive" class="hidden flex-col items-center justify-center h-full text-center space-y-4">
