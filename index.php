@@ -191,136 +191,126 @@ include 'config/config.php';
         </div>
     </section>
 
-<section id="wallet" class="py-16 relative bg-dark-panel/30 border-t border-dark-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-3 gap-8">
-            
-            <div class="lg:col-span-2">
-                <div class="glass-card rounded-2xl overflow-hidden shadow-card h-full">
-                    <div class="p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">My Wallet</h3>
-                            <p class="text-xs text-dark-muted">Multi-Chain Support (ERC20, BEP20, TRC20)</p>
-                        </div>
-                        <div class="bg-dark-bg px-3 py-1 rounded border border-dark-border flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                            <span class="text-xs font-mono">Connected</span>
-                        </div>
-                    </div>
-
-                    <div class="p-6 grid md:grid-cols-2 gap-8">
-                        <div class="flex flex-col justify-center">
-                            <p class="text-dark-muted text-sm mb-1">Total Balance</p>
-                            <h2 class="text-4xl font-display font-bold text-white mb-6">$42,894.52</h2>
-                            
-                            <div class="grid grid-cols-3 gap-3">
-                                <!-- Send Button -->
-                                <button onclick="window.location.href='auth/register.php';" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
-                                    <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white">
-                                        <i class="fa-solid fa-paper-plane"></i>
-                                    </div>
-                                    <span class="text-xs font-medium">Send</span>
-                                </button>
-                                <!-- Receive Button -->
-                                <button onclick="window.location.href='auth/register.php';" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
-                                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white">
-                                        <i class="fa-solid fa-qrcode"></i>
-                                    </div>
-                                    <span class="text-xs font-medium">Receive</span>
-                                </button>
-                                <!-- Swap Button -->
-                                <button onclick="window.location.href='auth/register.php';" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
-                                    <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white">
-                                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                                    </div>
-                                    <span class="text-xs font-medium">Swap</span>
-                                </button>
+    <section id="wallet" class="py-16 relative bg-dark-panel/30 border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-card h-full">
+                        <div class="p-6 border-b border-dark-border flex justify-between items-center bg-dark-panel/50">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">My Wallet</h3>
+                                <p class="text-xs text-dark-muted">Multi-Chain Support (ERC20, BEP20, TRC20)</p>
+                            </div>
+                            <div class="bg-dark-bg px-3 py-1 rounded border border-dark-border flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                <span class="text-xs font-mono">Connected</span>
                             </div>
                         </div>
 
-                        <div class="bg-dark-bg rounded-xl border border-dark-border p-5 min-h-[300px] relative">
+                        <div class="p-6 grid md:grid-cols-2 gap-8">
+                            <div class="flex flex-col justify-center">
+                                <p class="text-dark-muted text-sm mb-1">Total Balance</p>
+                                <h2 class="text-4xl font-display font-bold text-white mb-6">$42,894.52</h2>
+                                
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button onclick="switchTab('send')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
+                                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                        </div>
+                                        <span class="text-xs font-medium">Send</span>
+                                    </button>
+                                    <button onclick="switchTab('receive')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
+                                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white">
+                                            <i class="fa-solid fa-qrcode"></i>
+                                        </div>
+                                        <span class="text-xs font-medium">Receive</span>
+                                    </button>
+                                    <button onclick="switchTab('swap')" class="flex flex-col items-center gap-2 p-3 rounded-xl bg-dark-bg border border-dark-border hover:border-brand-primary hover:bg-brand-primary/10 transition-all group">
+                                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white">
+                                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                        </div>
+                                        <span class="text-xs font-medium">Swap</span>
+                                    </button>
+                                </div>
+                            </div>
 
-                            <!-- SEND TAB -->
-                            <div id="tab-send" class="space-y-4">
-                                <div class="flex justify-between items-center mb-2">
-                                    <h4 class="font-bold text-white">Send Crypto</h4>
-                                    <!-- Max Amount Trigger -->
-                                    <span onclick="window.location.href='auth/register.php';" class="text-xs text-brand-primary cursor-pointer">Max Amount</span>
+                            <div class="bg-dark-bg rounded-xl border border-dark-border p-5 min-h-[300px] relative">
+    
+                                <!-- SEND TAB -->
+                                <div id="tab-send" class="space-y-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <h4 class="font-bold text-white">Send Crypto</h4>
+                                        <span class="text-xs text-brand-primary cursor-pointer">Max Amount</span>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-dark-muted block mb-1">Asset</label>
+                                        <select class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
+                                            <option>Bitcoin (BTC)</option>
+                                            <option>Ethereum (ETH)</option>
+                                            <option>USDT (TRC20)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-dark-muted block mb-1">Recipient Address</label>
+                                        <div class="relative">
+                                            <input type="text" placeholder="Paste address..." class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none pl-9">
+                                            <i class="fa-solid fa-wallet absolute left-3 top-3 text-dark-muted text-xs"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs text-dark-muted block mb-1">Amount</label>
+                                        <input type="number" placeholder="0.00" class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
+                                    </div>
+                                    <!-- FIXED SEND BUTTON -->
+                                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary hover:bg-brand-accent text-white font-bold py-2.5 rounded-lg mt-2 transition-colors">Confirm Send</button>
                                 </div>
-                                <div>
-                                    <label class="text-xs text-dark-muted block mb-1">Asset</label>
-                                    <select class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
-                                        <option>Bitcoin (BTC)</option>
-                                        <option>Ethereum (ETH)</option>
-                                        <option>USDT (TRC20)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="text-xs text-dark-muted block mb-1">Recipient Address</label>
-                                    <div class="relative">
-                                        <input type="text" placeholder="Paste address..." class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none pl-9">
-                                        <i class="fa-solid fa-wallet absolute left-3 top-3 text-dark-muted text-xs"></i>
+
+                                <!-- RECEIVE TAB -->
+                                <div id="tab-receive" class="hidden flex-col items-center justify-center h-full text-center space-y-4">
+                                    <h4 class="font-bold text-white mb-2">Receive Bitcoin</h4>
+                                    <div class="bg-white p-3 rounded-lg">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy" alt="QR">
+                                    </div>
+                                    <div class="w-full">
+                                        <p class="text-xs text-dark-muted mb-1">Wallet Address</p>
+                                        <div class="flex items-center bg-dark-panel border border-dark-border rounded-lg overflow-hidden">
+                                            <input type="text" value="3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy" readonly class="bg-transparent text-xs text-brand-secondary p-2 w-full outline-none">
+                                            <!-- FIXED COPY BUTTON -->
+                                            <button onclick="alert('Please log in to use your actual wallet address.'); window.location.href='auth/login.php';" class="px-3 py-2 bg-dark-border hover:bg-brand-primary hover:text-white transition-colors"><i class="fa-regular fa-copy"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <label class="text-xs text-dark-muted block mb-1">Amount</label>
-                                    <input type="number" placeholder="0.00" class="w-full bg-dark-panel border border-dark-border rounded-lg p-2.5 text-sm text-white focus:border-brand-primary outline-none">
+
+                                <!-- SWAP TAB -->
+                                <div id="tab-swap" class="hidden space-y-3">
+                                    <h4 class="font-bold text-white mb-2">Instant Swap</h4>
+                                    <div class="bg-dark-panel p-3 rounded-lg border border-dark-border">
+                                        <div class="flex justify-between text-xs text-dark-muted mb-1"><span>From</span><span>Bal: 1.2 ETH</span></div>
+                                        <div class="flex items-center justify-between">
+                                            <!-- FIXED SWAP CALCULATOR -->
+                                            <input type="number" id="swap-from" placeholder="0.0" min="0" class="bg-transparent text-white font-bold text-lg w-20 outline-none">
+                                            <span class="bg-dark-bg px-2 py-1 rounded text-xs font-bold border border-dark-border">ETH</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-center -my-3 relative z-10">
+                                        <div class="bg-brand-primary p-1.5 rounded-full text-white text-xs border-4 border-dark-bg">
+                                            <i class="fa-solid fa-arrow-down"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-dark-panel p-3 rounded-lg border border-dark-border">
+                                        <div class="flex justify-between text-xs text-dark-muted mb-1"><span>To</span><span id="swap-usd-estimate">~ $0.00</span></div>
+                                        <div class="flex items-center justify-between">
+                                            <!-- FIXED SWAP CALCULATOR -->
+                                            <input type="number" id="swap-to" placeholder="0.0" min="0" class="bg-transparent text-white font-bold text-lg w-20 outline-none">
+                                            <span class="bg-dark-bg px-2 py-1 rounded text-xs font-bold border border-dark-border">USDT</span>
+                                        </div>
+                                    </div>
+                                    <!-- FIXED SWAP BUTTON -->
+                                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary hover:bg-brand-accent text-white font-bold py-2.5 rounded-lg mt-2 transition-colors">Swap Assets</button>
                                 </div>
-                                <!-- Confirm Send Button -->
-                                <button onclick="window.location.href='auth/register.php';" class="w-full bg-brand-primary hover:bg-brand-accent text-white font-bold py-2.5 rounded-lg mt-2 transition-colors">Confirm Send</button>
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!-- RECEIVE TAB -->
-    <div id="tab-receive" class="hidden flex-col items-center justify-center h-full text-center space-y-4">
-        <h4 class="font-bold text-white mb-2">Receive Bitcoin</h4>
-        <div class="bg-white p-3 rounded-lg">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy" alt="QR">
-        </div>
-        <div class="w-full">
-            <p class="text-xs text-dark-muted mb-1">Wallet Address</p>
-            <div class="flex items-center bg-dark-panel border border-dark-border rounded-lg overflow-hidden">
-                <input type="text" value="3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy" readonly class="bg-transparent text-xs text-brand-secondary p-2 w-full outline-none">
-                <!-- FIXED COPY BUTTON -->
-                <button onclick="alert('Please log in to use your actual wallet address.'); window.location.href='auth/login.php';" class="px-3 py-2 bg-dark-border hover:bg-brand-primary hover:text-white transition-colors"><i class="fa-regular fa-copy"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SWAP TAB -->
-    <div id="tab-swap" class="hidden space-y-3">
-        <h4 class="font-bold text-white mb-2">Instant Swap</h4>
-        <div class="bg-dark-panel p-3 rounded-lg border border-dark-border">
-            <div class="flex justify-between text-xs text-dark-muted mb-1"><span>From</span><span>Bal: 1.2 ETH</span></div>
-            <div class="flex items-center justify-between">
-                <input type="number" placeholder="0.0" class="bg-transparent text-white font-bold text-lg w-20 outline-none">
-                <span class="bg-dark-bg px-2 py-1 rounded text-xs font-bold border border-dark-border">ETH</span>
-            </div>
-        </div>
-        <div class="flex justify-center -my-3 relative z-10">
-            <div class="bg-brand-primary p-1.5 rounded-full text-white text-xs border-4 border-dark-bg">
-                <i class="fa-solid fa-arrow-down"></i>
-            </div>
-        </div>
-        <div class="bg-dark-panel p-3 rounded-lg border border-dark-border">
-            <div class="flex justify-between text-xs text-dark-muted mb-1"><span>To</span><span>~ $0.00</span></div>
-            <div class="flex items-center justify-between">
-                <input type="number" placeholder="0.0" class="bg-transparent text-white font-bold text-lg w-20 outline-none">
-                <span class="bg-dark-bg px-2 py-1 rounded text-xs font-bold border border-dark-border">USDT</span>
-            </div>
-        </div>
-        <!-- FIXED SWAP BUTTON -->
-        <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary hover:bg-brand-accent text-white font-bold py-2.5 rounded-lg mt-2 transition-colors">Swap Assets</button>
-    </div>
-
-</div>
                         </div>
                     </div>
                 </div>
@@ -366,7 +356,8 @@ include 'config/config.php';
                                 <span class="text-white font-mono text-sm">1.5 ETH</span>
                             </div>
                         </div>
-                        <button class="w-full mt-6 py-2 text-sm text-dark-muted border border-dark-border rounded-lg hover:text-white hover:border-white transition-colors">View All History</button>
+                        <!-- FIXED HISTORY BUTTON -->
+                        <button onclick="window.location.href='auth/login.php';" class="w-full mt-6 py-2 text-sm text-dark-muted border border-dark-border rounded-lg hover:text-white hover:border-white transition-colors">View All History</button>
                     </div>
                 </div>
             </div>
@@ -475,7 +466,7 @@ include 'config/config.php';
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> 24/7 Support</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Capital Back: Yes</li>
                     </ul>
-                    <button class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:bg-brand-primary group-hover:border-transparent transition-all font-bold">Invest Now</button>
+                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:bg-brand-primary group-hover:border-transparent transition-all font-bold">Invest Now</button>
                 </div>
 
                 <div class="relative glass-card p-8 rounded-2xl border-brand-primary bg-brand-primary/5 text-left transform md:-translate-y-4 shadow-neon">
@@ -492,7 +483,7 @@ include 'config/config.php';
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Dedicated Manager</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Compounding Available</li>
                     </ul>
-                    <button class="w-full bg-brand-primary text-white py-3 rounded-lg hover:bg-brand-accent transition-all font-bold shadow-lg">Invest Now</button>
+                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary text-white py-3 rounded-lg hover:bg-brand-accent transition-all font-bold shadow-lg">Invest Now</button>
                 </div>
 
                 <div class="glass-card p-8 rounded-2xl hover:border-brand-primary transition-colors text-left group">
@@ -508,7 +499,7 @@ include 'config/config.php';
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> VIP Support</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Daily Payouts</li>
                     </ul>
-                    <button class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:bg-purple-600 group-hover:border-transparent transition-all font-bold">Invest Now</button>
+                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:bg-purple-600 group-hover:border-transparent transition-all font-bold">Invest Now</button>
                 </div>
 
             </div>
@@ -594,51 +585,83 @@ include 'config/config.php';
             if(tabName === 'receive') el.classList.add('flex');
         }
 
+        // Global variable for current ETH live price from the API pull for calculations
+        let liveEthPrice = 3000; 
        
         async function fetchData() {
-    try {
-        const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&sparkline=false');
-        const data = await res.json();
+            try {
+                const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&sparkline=false');
+                const data = await res.json();
+                
+                const ticker = document.getElementById('crypto-ticker');
+                let tickerHtml = '';
+                
+                let tableHtml = '';
+
+                data.forEach(coin => {
+                    const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
+                    tickerHtml += `<span class="mx-4"><span class="font-bold text-white">${coin.symbol.toUpperCase()}</span> $${coin.current_price} <span class="${color}">${coin.price_change_percentage_24h.toFixed(2)}%</span></span>`;
+                    
+                    // FIXED: Save live ETH price to make SWAP calculator accurate 
+                    if(coin.symbol.toLowerCase() === 'eth') {
+                        liveEthPrice = coin.current_price;
+                    }
+
+                    // FIXED TRADE BUTTON: Attached Auth login route to the trade button output
+                    tableHtml += `
+                        <tr class="hover:bg-dark-panel transition-colors">
+                            <td class="px-6 py-4 flex items-center gap-3">
+                                <img src="${coin.image}" class="w-6 h-6 rounded-full">
+                                <span class="text-white font-bold">${coin.name}</span>
+                            </td>
+                            <td class="px-6 py-4 text-white font-mono">$${coin.current_price}</td>
+                            <td class="px-6 py-4 ${color} font-medium">${coin.price_change_percentage_24h.toFixed(2)}%</td>
+                            <td class="px-6 py-4 text-right"><button onclick="window.location.href='auth/login.php';" class="text-brand-primary hover:text-white border border-brand-primary hover:bg-brand-primary px-3 py-1 rounded text-xs transition-colors">Trade</button></td>
+                        </tr>
+                    `;
+                });
+                
+                ticker.innerHTML = tickerHtml + tickerHtml;
+                const table = document.getElementById('market-body');
+                table.innerHTML = tableHtml;
+
+            } catch (e) {
+                console.log(e);
+            }
+        }
         
-        // --- 1. Update Ticker ---
-        const ticker = document.getElementById('crypto-ticker');
-        let tickerHtml = '';
-        data.forEach(coin => {
-            const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
-            tickerHtml += `<span class="mx-4"><span class="font-bold text-white">${coin.symbol.toUpperCase()}</span> $${coin.current_price} <span class="${color}">${coin.price_change_percentage_24h.toFixed(2)}%</span></span>`;
-        });
-        
-        ticker.innerHTML = tickerHtml + tickerHtml;
-
-        // --- 2. Update Table ---
-        const table = document.getElementById('market-body');
-        let tableHtml = '';
-        data.forEach(coin => {
-            const color = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
-            tableHtml += `
-                <tr class="hover:bg-dark-panel transition-colors">
-                    <td class="px-6 py-4 flex items-center gap-3">
-                        <img src="${coin.image}" class="w-6 h-6 rounded-full">
-                        <span class="text-white font-bold">${coin.name}</span>
-                    </td>
-                    <td class="px-6 py-4 text-white font-mono">$${coin.current_price}</td>
-                    <td class="px-6 py-4 ${color} font-medium">${coin.price_change_percentage_24h.toFixed(2)}%</td>
-                    <td class="px-6 py-4 text-right">
-                        <button onclick="window.location.href='register.php';" class="text-brand-primary hover:text-white border border-brand-primary hover:bg-brand-primary px-3 py-1 rounded text-xs transition-colors">
-                            Trade
-                        </button>
-                    </td>
-                </tr>
-            `;
-        });
-        table.innerHTML = tableHtml;
-
-    } catch (e) {
-        console.log("Error fetching crypto data:", e);
-    }
-}
-
         fetchData();
+
+        // FIXED SWAP CALCULATOR: Functional real-time conversions
+        const swapFromInput = document.getElementById('swap-from');
+        const swapToInput = document.getElementById('swap-to');
+        const usdEstimate = document.getElementById('swap-usd-estimate');
+
+        if(swapFromInput && swapToInput) {
+            // Typing in ETH converts to USDT equivalent using CoinGecko live prices fetched above
+            swapFromInput.addEventListener('input', () => {
+                if(swapFromInput.value && swapFromInput.value >= 0) {
+                    const usdtValue = parseFloat(swapFromInput.value) * liveEthPrice;
+                    swapToInput.value = usdtValue.toFixed(2);
+                    usdEstimate.textContent = '~ $' + usdtValue.toFixed(2);
+                } else {
+                    swapToInput.value = '';
+                    usdEstimate.textContent = '~ $0.00';
+                }
+            });
+
+            // Typing in USDT back converts accurately into ETH equivalent
+            swapToInput.addEventListener('input', () => {
+                if(swapToInput.value && swapToInput.value >= 0) {
+                    const ethValue = parseFloat(swapToInput.value) / liveEthPrice;
+                    swapFromInput.value = ethValue.toFixed(6);
+                    usdEstimate.textContent = '~ $' + parseFloat(swapToInput.value).toFixed(2);
+                } else {
+                    swapFromInput.value = '';
+                    usdEstimate.textContent = '~ $0.00';
+                }
+            });
+        }
     </script>
 </body>
 </html>
