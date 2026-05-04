@@ -3,6 +3,12 @@ include 'header.php';
 
 $alert = "";
 
+// Initialize variables safely to prevent "Undefined variable" warnings on first load
+$current_phone = $phone ?? '';
+$current_address = $address ?? '';
+$current_dob = $dob ?? '';
+$current_country = $country ?? '';
+
 // --- 1. UPDATE PERSONAL INFO ---
 if (isset($_POST['update_profile'])) {
     $phone_val = clean($_POST['phone']);
@@ -14,11 +20,11 @@ if (isset($_POST['update_profile'])) {
     
     if (mysqli_query($link, $sql)) {
         $alert = "Swal.fire({icon: 'success', title: 'Saved', text: 'Profile details updated successfully.'});";
-        // Update local variables
-        $phone = $phone_val;
-        $country = $country_val;
-        $address = $address_val;
-        $dob = $dob_val;
+        // Update local variables immediately so the form shows the new data
+        $current_phone = $phone_val;
+        $current_country = $country_val;
+        $current_address = $address_val;
+        $current_dob = $dob_val;
     } else {
         $alert = "Swal.fire({icon: 'error', title: 'Error', text: 'Failed to update profile.'});";
     }
@@ -119,19 +125,19 @@ if (isset($_POST['update_pin'])) {
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2">Full Name (Read Only)</label>
-                            <input type="text" value="<?php echo $fullname; ?>" readonly class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-500 dark:text-slate-400 cursor-not-allowed">
+                            <input type="text" value="<?php echo htmlspecialchars($fullname ?? ''); ?>" readonly class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-500 dark:text-slate-400 cursor-not-allowed">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2">Email Address (Read Only)</label>
-                            <input type="text" value="<?php echo $email; ?>" readonly class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-500 dark:text-slate-400 cursor-not-allowed">
+                            <input type="text" value="<?php echo htmlspecialchars($email ?? ''); ?>" readonly class="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-slate-500 dark:text-slate-400 cursor-not-allowed">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2">Phone Number</label>
-                            <input type="tel" name="phone" value="<?php echo $phone; ?>" placeholder="+1 (555) 000-0000" class="w-full bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:border-indigo-500 focus:outline-none transition-all">
+                            <input type="tel" name="phone" value="<?php echo htmlspecialchars($current_phone); ?>" placeholder="+1 (555) 000-0000" class="w-full bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:border-indigo-500 focus:outline-none transition-all">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2">Date of Birth</label>
-                            <input type="date" name="dob" value="<?php echo $dob; ?>" class="w-full bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:border-indigo-500 focus:outline-none transition-all">
+                            <input type="date" name="dob" value="<?php echo htmlspecialchars($current_dob); ?>" class="w-full bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:border-indigo-500 focus:outline-none transition-all">
                         </div>
                         
                         <div>
@@ -144,7 +150,7 @@ if (isset($_POST['update_pin'])) {
                                         "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Côte d'Ivoire", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (Burma)", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
                                     ];
                                     foreach ($countries as $c) {
-                                        $selected = ($country == $c) ? 'selected' : '';
+                                        $selected = ($current_country == $c) ? 'selected' : '';
                                         echo "<option value=\"$c\" $selected>$c</option>";
                                     }
                                     ?>
@@ -156,7 +162,7 @@ if (isset($_POST['update_pin'])) {
                         <!-- Spanning 2 columns for the address -->
                         <div class="md:col-span-2">
                             <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-2">Residential Address</label>
-                            <input type="text" name="address" value="<?php echo $address; ?>" placeholder="123 Main Street, Apt 4B" class="w-full bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:border-indigo-500 focus:outline-none transition-all">
+                            <input type="text" name="address" value="<?php echo htmlspecialchars($current_address); ?>" placeholder="123 Main Street, Apt 4B" class="w-full bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 focus:border-indigo-500 focus:outline-none transition-all">
                         </div>
                     </div>
 
