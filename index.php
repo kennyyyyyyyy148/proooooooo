@@ -446,65 +446,88 @@ include 'config/config.php';
         </div>
     </section>
 
-    <section id="invest" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-display font-bold text-white mb-4">Investment <span class="text-brand-primary">Plans</span></h2>
-            <p class="text-dark-muted max-w-2xl mx-auto mb-16">Choose a staking plan that fits your financial goals. Earn passive income with daily payouts.</p>
+    <?php
 
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <div class="glass-card p-8 rounded-2xl hover:border-brand-primary transition-colors text-left group">
-                    <h3 class="text-2xl font-bold text-white mb-2">Starter</h3>
-                    <p class="text-sm text-dark-muted mb-6">For those new to crypto staking.</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-brand-secondary">5%</span>
-                        <span class="text-dark-muted">/ Monthly ROI</span>
+include 'config.php';
+
+$plans_query = mysqli_query($link, "SELECT * FROM investment_plans ORDER BY min_deposit ASC LIMIT 3");
+?>
+
+<section id="invest" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-display font-bold text-white mb-4">Investment <span class="text-brand-primary">Plans</span></h2>
+        <p class="text-dark-muted max-w-2xl mx-auto mb-16">Choose a staking plan that fits your financial goals. Earn passive income with daily payouts.</p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <?php 
+            if(mysqli_num_rows($plans_query) > 0): 
+                $count = 0;
+                while($plan = mysqli_fetch_assoc($plans_query)): 
+                    $count++;
+                    
+                    // We make the 2nd plan the "Popular" highlighted one automatically
+                    $is_popular = ($count == 2); 
+            ?>
+
+                <?php if($is_popular): ?>
+                    <!-- POPULAR / HIGHLIGHTED CARD -->
+                    <div class="relative glass-card p-8 rounded-2xl border-brand-primary bg-brand-primary/5 text-left transform md:-translate-y-4 shadow-neon">
+                        <div class="absolute top-0 right-0 bg-brand-primary text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold">POPULAR</div>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-2"><?php echo htmlspecialchars($plan['name']); ?></h3>
+                        <p class="text-sm text-dark-muted mb-6"><?php echo htmlspecialchars($plan['description']); ?></p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-brand-primary"><?php echo $plan['roi']; ?>%</span>
+                            <span class="text-dark-muted">/ Daily ROI</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Min Invest: $<?php echo number_format($plan['min_deposit']); ?></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Duration: <?php echo $plan['duration']; ?> Days</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Risk Level: <?php echo ucfirst($plan['risk_level']); ?></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> 24/7 Premium Support</li>
+                        </ul>
+                        
+                        <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary text-white py-3 rounded-lg hover:bg-brand-accent transition-all font-bold shadow-lg">Invest Now</button>
                     </div>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Min Invest: $100</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Max Invest: $1,000</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> 24/7 Support</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Capital Back: Yes</li>
-                    </ul>
-                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:bg-brand-primary group-hover:border-transparent transition-all font-bold">Invest Now</button>
-                </div>
 
-                <div class="relative glass-card p-8 rounded-2xl border-brand-primary bg-brand-primary/5 text-left transform md:-translate-y-4 shadow-neon">
-                    <div class="absolute top-0 right-0 bg-brand-primary text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold">POPULAR</div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
-                    <p class="text-sm text-dark-muted mb-6">High yield for serious investors.</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-brand-primary">12%</span>
-                        <span class="text-dark-muted">/ Monthly ROI</span>
+                <?php else: ?>
+                    <!-- REGULAR CARD -->
+                    <div class="glass-card p-8 rounded-2xl hover:border-brand-primary transition-colors text-left group">
+                        <h3 class="text-2xl font-bold text-white mb-2"><?php echo htmlspecialchars($plan['name']); ?></h3>
+                        <p class="text-sm text-dark-muted mb-6"><?php echo htmlspecialchars($plan['description']); ?></p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold <?php echo ($count == 3) ? 'text-purple-400' : 'text-brand-secondary'; ?>"><?php echo $plan['roi']; ?>%</span>
+                            <span class="text-dark-muted">/ Daily ROI</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Min Invest: $<?php echo number_format($plan['min_deposit']); ?></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Duration: <?php echo $plan['duration']; ?> Days</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Risk Level: <?php echo ucfirst($plan['risk_level']); ?></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Capital Back: Yes</li>
+                        </ul>
+                        
+                        <button onclick="window.location.href='auth/login.php';" class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:<?php echo ($count == 3) ? 'bg-purple-600' : 'bg-brand-primary'; ?> group-hover:border-transparent transition-all font-bold">Invest Now</button>
                     </div>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Min Invest: $1,000</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Max Invest: $10,000</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Dedicated Manager</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-primary"></i> Compounding Available</li>
-                    </ul>
-                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-brand-primary text-white py-3 rounded-lg hover:bg-brand-accent transition-all font-bold shadow-lg">Invest Now</button>
-                </div>
+                <?php endif; ?>
 
-                <div class="glass-card p-8 rounded-2xl hover:border-brand-primary transition-colors text-left group">
-                    <h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
-                    <p class="text-sm text-dark-muted mb-6">Maximum returns for large capital.</p>
-                    <div class="mb-6">
-                        <span class="text-4xl font-bold text-purple-400">25%</span>
-                        <span class="text-dark-muted">/ Monthly ROI</span>
-                    </div>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-300">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Min Invest: $10,000+</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Unlimited Max</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> VIP Support</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Daily Payouts</li>
-                    </ul>
-                    <button onclick="window.location.href='auth/login.php';" class="w-full bg-dark-bg border border-dark-border text-white py-3 rounded-lg group-hover:bg-purple-600 group-hover:border-transparent transition-all font-bold">Invest Now</button>
+            <?php 
+                endwhile; 
+            else: 
+            ?>
+                <!-- FALLBACK IF NO PLANS EXIST IN DB -->
+                <div class="col-span-3 text-center py-10">
+                    <p class="text-dark-muted">Investment plans are currently being updated. Please check back soon.</p>
                 </div>
+            <?php endif; ?>
 
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="market" class="py-20 bg-dark-panel border-t border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
